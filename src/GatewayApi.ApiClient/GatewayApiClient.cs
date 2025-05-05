@@ -25,7 +25,7 @@ public class GatewayApiClient : IGatewayApiClient, ISms
         using var response = await _httpClient.PostAsJsonAsync(
             "/rest/mtsms",
             sms,
-            GatewayApiJsonSerializerOptions.Value,
+            GatewayApiJsonSerializerContext.Default.SmsMessage,
             cancellationToken
         );
 
@@ -34,8 +34,8 @@ public class GatewayApiClient : IGatewayApiClient, ISms
             throw new GatewayApiException((int)response.StatusCode);
         }
 
-        var result = await response.Content.ReadFromJsonAsync<SendSmsResponse>(
-            GatewayApiJsonSerializerOptions.Value,
+        var result = await response.Content.ReadFromJsonAsync(
+            GatewayApiJsonSerializerContext.Default.SendSmsResponse,
             cancellationToken
         );
         return result!;

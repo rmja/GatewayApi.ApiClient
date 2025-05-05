@@ -21,7 +21,7 @@ public class SmsTests(ApiFixture fixture) : IClassFixture<ApiFixture>
         };
 
         // When
-        var json = JsonSerializer.Serialize(sms, GatewayApiJsonSerializerOptions.Value);
+        var json = JsonSerializer.Serialize(sms, GatewayApiJsonSerializerContext.Default.Options);
 
         // Then
         Assert.Equal(

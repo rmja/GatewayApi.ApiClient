@@ -3,7 +3,7 @@ using GatewayApi.ApiClient.JsonConverters;
 
 namespace GatewayApi.ApiClient.Sms;
 
-[JsonConverter(typeof(SnakeCaseUpperJsonConverter))]
+[JsonConverter(typeof(SnakeCaseUpperJsonConverter<SmsPriority>))]
 public enum SmsPriority
 {
     Bulk,

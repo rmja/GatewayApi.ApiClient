@@ -4,21 +4,23 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
 	
-	<Authors>Rasmus Melchior Jacobsen</Authors>
-	<Description>Unofficial .NET API Client for GatewayAPI.</Description>
-	<PackageProjectUrl>https://github.com/rmja/GatewayApi.ApiClient</PackageProjectUrl>
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>
-	<RepositoryType>git</RepositoryType>
-	<RepositoryUrl>https://github.com/rmja/GatewayApi.ApiClient.git</RepositoryUrl>
-	<Version>0.0.1</Version>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
+    <Authors>Rasmus Melchior Jacobsen</Authors>
+    <Description>Unofficial .NET API Client for GatewayAPI.</Description>
+    <PackageProjectUrl>https://github.com/rmja/GatewayApi.ApiClient</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/rmja/GatewayApi.ApiClient.git</RepositoryUrl>
+    <Version>0.0.1</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
-	<None Include="..\..\README.md" Pack="true" PackagePath="">
-	  <Link>Properties\README.md</Link>
-	</None>
+    <InternalsVisibleTo Include="GatewayApi.ApiClient.Tests" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="">
+      <Link>Properties\README.md</Link>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

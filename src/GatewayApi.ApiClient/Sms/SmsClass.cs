@@ -3,7 +3,7 @@ using GatewayApi.ApiClient.JsonConverters;
 
 namespace GatewayApi.ApiClient.Sms;
 
-[JsonConverter(typeof(SnakeCaseLowerJsonConverter))]
+[JsonConverter(typeof(SnakeCaseLowerJsonConverter<SmsClass>))]
 public enum SmsClass
 {
     Standard,
