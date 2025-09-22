@@ -31,7 +31,7 @@ public class GatewayApiClient : IGatewayApiClient, ISms
 
         if (!response.IsSuccessStatusCode)
         {
-            var responseBody = await response.Content.ReadAsStringAsync();
+            var responseBody = await response.Content.ReadAsStringAsync(cancellationToken);
             throw new GatewayApiException((int)response.StatusCode, responseBody);
         }
 
