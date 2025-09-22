@@ -31,7 +31,8 @@ public class GatewayApiClient : IGatewayApiClient, ISms
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new GatewayApiException((int)response.StatusCode);
+            var responseBody = await response.Content.ReadAsStringAsync();
+            throw new GatewayApiException((int)response.StatusCode, responseBody);
         }
 
         var result = await response.Content.ReadFromJsonAsync(
